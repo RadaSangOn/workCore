@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Note</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/lib/metisMenu/dist/metisMenu.css">
+
+    <link rel="stylesheet" href="/lib/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="/lib/datatables/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="/lib/jquery-ui/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" href="/lib/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css">
+    <link rel="stylesheet" href="/lib/morrisjs/morris.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/site.css" />
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib/metisMenu/dist/metisMenu.js"></script>
+    <script src="/lib/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="/lib/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="/js/jquery-ui-1.11.4.custom.js"></script>
+    <script src="/lib/jquery-ui/ui/minified/i18n/datepicker-th.min.js"></script>
+    <script src="/lib/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
+    <script src="/js/site.js"></script>
+    <script>
+        $.datepicker.regional['th'] = {
+            changeMonth: true,
+            changeYear: true,
+            //defaultDate: GetFxupdateDate(FxRateDateAndUpdate.d[0].Day),
+            yearOffSet: 543,
+            dateFormat: 'dd-mm-yy',
+            constrainInput: true,
+            yearRange: '-100:+0',
+        };
+        $.datepicker.setDefaults($.datepicker.regional['th']);
+
+        $(function () {
+            $("#dcal").datepicker($.datepicker.regional["th"]);
+            $("#dcal").datepicker("setDate", new Date());
+        });
+    </script>
+</head>
+<body>
+    Change field name; subistrict to subdistrict in all tables<br/>
+    Change table name; course_type/ to course_type<br/><br/>
+    <input id="dcal" type="text" />
+</body>
+</html>
