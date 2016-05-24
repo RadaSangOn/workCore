@@ -1,10 +1,9 @@
 using System.Linq;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
 using PPCore.Models;
 using System.Collections.Generic;
 using System;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PPCore.Controllers
 {
@@ -47,12 +46,12 @@ namespace PPCore.Controllers
                 }
                 else
                 {
-                    return HttpNotFound();
+                    return NotFound();
                 }
             }
             else
             {
-                return HttpNotFound();
+                return NotFound();
             }
         }
 

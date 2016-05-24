@@ -1,9 +1,8 @@
 using System.Linq;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
 using PPCore.Models;
 using System;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PPCore.Controllers
 {
@@ -21,7 +20,7 @@ namespace PPCore.Controllers
         {
             if (memberId == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             ViewBag.memberId = memberId;
             ViewBag.blood_group = new SelectList(new[]

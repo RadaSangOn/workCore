@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNet.Http;
+
 
 namespace PPCore.Controllers
 {
@@ -235,7 +235,7 @@ namespace PPCore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> uploadMemPhoto(ICollection<Microsoft.AspNetCore.Http.IFormFile> fileMemPhoto)
+        public async Task<IActionResult> uploadMemPhoto(ICollection<IFormFile> fileMemPhoto)
         {
             var uploads = Path.Combine(_env.WebRootPath, _configuration.GetSection("Paths").GetSection("images_upload").Value);
             var fileName = DateTime.Now.ToString("ddhhmmss") + "_";
@@ -244,12 +244,11 @@ namespace PPCore.Controllers
                 if (file.Length > 0)
                 {
                     fileName += ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-
-                    using (FileStream SourceStream = file.Open(fileName, FileMode.Open))
+                    using (var SourceStream = file.OpenReadStream())
                     {
-                        using (FileStream DestinationStream = file.Create(Path.Combine(uploads, fileName)))
+                        using (var fileStream = new FileStream(Path.Combine(uploads, fileName), FileMode.Create))
                         {
-                            await SourceStream.CopyToAsync(DestinationStream);
+                            await SourceStream.CopyToAsync(fileStream);
                         }
                     }
                 }
@@ -268,7 +267,13 @@ namespace PPCore.Controllers
                 if (file.Length > 0)
                 {
                     fileName += ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    await file.SaveAsAsync(Path.Combine(uploads, fileName));
+                    using (var SourceStream = file.OpenReadStream())
+                    {
+                        using (var fileStream = new FileStream(Path.Combine(uploads, fileName), FileMode.Create))
+                        {
+                            await SourceStream.CopyToAsync(fileStream);
+                        }
+                    }
                 }
             }
             return Json(new { result = "success", uploads = uploads, fileName = fileName });
