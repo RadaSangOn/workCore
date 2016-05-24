@@ -24,13 +24,13 @@ namespace PPCore.Controllers
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             ini_country ini_country = _context.ini_country.Single(m => m.country_code == id);
             if (ini_country == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             return View(ini_country);
@@ -61,13 +61,13 @@ namespace PPCore.Controllers
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             ini_country ini_country = _context.ini_country.Single(m => m.country_code == id);
             if (ini_country == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(ini_country);
         }
@@ -92,13 +92,13 @@ namespace PPCore.Controllers
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             ini_country ini_country = _context.ini_country.Single(m => m.country_code == id);
             if (ini_country == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             return View(ini_country);

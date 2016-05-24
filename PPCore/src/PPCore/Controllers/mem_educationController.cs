@@ -38,12 +38,12 @@ namespace PPCore.Controllers
                 }
                 else
                 {
-                    return HttpNotFound();
+                    return NotFound();
                 }
             }
             else
             {
-                return HttpNotFound();
+                return NotFound();
             }
         }
 

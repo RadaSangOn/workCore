@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNet.Mvc.Rendering;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace PPCore.ViewModels.mem_train_record
 {
