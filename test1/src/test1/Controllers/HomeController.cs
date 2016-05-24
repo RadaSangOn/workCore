@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RazorPDF;
 
-namespace test2.Controllers
+namespace test1.Controllers
 {
     public class HomeController : Controller
     {

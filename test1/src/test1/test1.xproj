@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>630b6365-acc9-4b96-a3e7-8c444d9d0425</ProjectGuid>
-    <RootNamespace>test2</RootNamespace>
+    <ProjectGuid>d22ea4cc-f5d8-4bc0-b767-80d24951c125</ProjectGuid>
+    <RootNamespace>test1</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
