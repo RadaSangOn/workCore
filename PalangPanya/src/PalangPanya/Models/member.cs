@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -130,7 +131,10 @@ namespace PalangPanya.Models
         public string cid_card_pic { get; set; }
 
         public Guid id { get; set; }
+
+        [HiddenInput]
         public byte[] rowversion { get; set; }
+
         public string x_log { get; set; }
         public string x_note { get; set; }
         public string x_status { get; set; }

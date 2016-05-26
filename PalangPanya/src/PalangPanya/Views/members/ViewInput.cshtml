@@ -2,6 +2,7 @@
 
 <form asp-action="@ViewBag.FormAction">
     <div class="form-horizontal">
+        <input asp-for="rowversion" />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
 
         <div style="position:relative;top:-55px;margin-right:.5em;float:right">
