@@ -25,5 +25,10 @@ Tools/NuGet Package Manager/Package Manager Console
 Scaffold-DbContext "'Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;''" Microsoft.EntityFrameworkCore.SqlServer
 
 
-Scaffold-DbContext "'Server=(localdb)\ProjectsV13;Database=PalangPanyaDB;Trusted_Connection=True;''" Microsoft.EntityFrameworkCore.SqlServer 
+Scaffold-DbContext "'Server=(localdb)\ProjectsV13;Initial Catalog=PalangPanyaDB;Trusted_Connection=True;''" Microsoft.EntityFrameworkCore.SqlServer 
+
+Scaffold-DbContext "'Server=(localdb)\ProjectsV13;Initial Catalog=PalangPanyaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False'" Microsoft.EntityFrameworkCore.SqlServer 
+
+
+Scaffold-DbContext "'Data Source=(localdb)\\ProjectsV13;Initial Catalog=PalangPanyaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False'" Microsoft.EntityFrameworkCore.SqlServer 
 
