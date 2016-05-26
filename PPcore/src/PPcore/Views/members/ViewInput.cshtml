@@ -1,9 +1,9 @@
-﻿@model PalangPanya.Models.member
+﻿@model PPcore.Models.member
 
 <form asp-action="@ViewBag.FormAction">
     <div class="form-horizontal">
         <input asp-for="rowversion" />
-        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="All" class="text-danger"></div>
 
         <div style="position:relative;top:-55px;margin-right:.5em;float:right">
             <input class="btn btn-panel-green btn-sm" type="@ViewBag.ButtonUpperRightType" value="&nbsp;&nbsp;&nbsp;จัดเก็บ&nbsp;&nbsp;&nbsp;">
