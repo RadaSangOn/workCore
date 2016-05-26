@@ -184,7 +184,7 @@ namespace PPCore.Controllers
             {
                 member.x_status = "Y";
 
-                if ((member.mem_photo.Trim() != "")&&(member.mem_photo.Substring(0,1) != "M"))
+                if ((!string.IsNullOrEmpty(member.mem_photo)) && (member.mem_photo.Substring(0,1) != "M"))
                 {
                     var fileName = member.mem_photo.Substring(9);
                     pic_image m = new pic_image();
@@ -204,7 +204,7 @@ namespace PPCore.Controllers
 
                     member.mem_photo = m.image_code;
                 }
-                if ((member.cid_card_pic.Trim() != "") && (member.cid_card_pic.Substring(0, 1) != "C"))
+                if ((!string.IsNullOrEmpty(member.cid_card_pic)) && (member.cid_card_pic.Substring(0, 1) != "C"))
                 {
                     var fileName = member.cid_card_pic.Substring(9);
                     pic_image pic_image = new pic_image();
