@@ -1,0 +1,29 @@
+Tools/NuGet Package Manager/Package Manager Console
+-------------------------------------------------------
+Install-Package Microsoft.EntityFrameworkCore.SqlServer –Pre
+
+Install-Package Microsoft.EntityFrameworkCore.Tools –Pre
+Install-Package Microsoft.EntityFrameworkCore.SqlServer.Design –Pre
+
+
+Package.json
+-------------------------------------------------------
+
+"tools": {
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview1-final",
+      "imports": [
+        "portable-net45+win8+dnxcore50",
+        "portable-net45+win8"
+      ]
+    },
+
+
+Tools/NuGet Package Manager/Package Manager Console
+-------------------------------------------------------
+
+Scaffold-DbContext "'Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;''" Microsoft.EntityFrameworkCore.SqlServer
+
+
+Scaffold-DbContext "'Server=(localdb)\ProjectsV13;Database=PalangPanyaDB;Trusted_Connection=True;''" Microsoft.EntityFrameworkCore.SqlServer 
+
