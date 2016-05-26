@@ -3,64 +3,128 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PPcore</title>
-
+    <title>PalangPanya</title>
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/metisMenu/dist/metisMenu.css">
+
+        <link rel="stylesheet" href="~/lib/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="~/lib/datatables/media/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="~/lib/jquery-ui/themes/base/jquery-ui.css">
+
+
+        <link rel="stylesheet" href="~/lib/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css">
+        <link rel="stylesheet" href="~/lib/morrisjs/morris.css">
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/metisMenu/dist/metisMenu.min.css">
+
+        <link rel="stylesheet" href="~/lib/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="~/lib/datatables/media/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="~/lib/jquery-ui/themes/base/jquery-ui.min.css">
+
+        <link rel="stylesheet" href="~/lib/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css">
+        <link rel="stylesheet" href="~/lib/morrisjs/morris.css">
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+    
+    <!--[if lt IE 9]>
+        <script src="~/lib/html5shiv/dist/html5shiv.min.js"></script>
+        <script src="~/lib/respond/dest/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top navbar-green" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-controller="Home" asp-action="Index" class="navbar-brand">PPcore</a>
+                <a class="navbar-brand" href="/Home">PalangPanya</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+
+            <ul class="nav navbar-top-links navbar-left">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-caret-down"></i>&nbsp;&nbsp;สมาชิก
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="@Url.Action("Create", "members")"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;เพิ่มสมาชิก</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Home")"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;ข้อมูลสมาชิก</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>&nbsp;&nbsp;User : admin
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+        </nav>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2016 - PPcore</p>
-        </footer>
     </div>
+    <!-- /#wrapper -->
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/metisMenu/dist/metisMenu.js"></script>
+        <script src="~/lib/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="~/lib/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <script src="~/js/jquery-ui-1.11.4.custom.js"></script>
+        <script src="~/lib/jquery-ui/ui/core.js"></script>
+        <script src="~/lib/jquery-ui/ui/widget.js"></script>
+        <script src="~/lib/jquery-ui/ui/accordion.js"></script>
+        <script src="~/lib/jquery-ui/ui/i18n/datepicker-th.js"></script>
+        <script src="~/lib/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
+        <script src="~/js/site.js"></script>
     </environment>
     <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/lib/metisMenu/dist/metisMenu.min.js"></script>
+        <script src="~/lib/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="~/lib/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+        <script src="~/js/jquery-ui-1.11.4.custom.js"></script>
+        <script src="~/lib/jquery-ui/ui/minified/core.min.js"></script>
+        <script src="~/lib/jquery-ui/ui/minified/widget.min.js"></script>
+        <script src="~/lib/jquery-ui/ui/minified/accordion.min.js"></script>
+        <script src="~/lib/jquery-ui/ui/minified/i18n/datepicker-th.min.js"></script>
+        <script src="~/lib/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+
+    <br/>
 
     @RenderSection("scripts", required: false)
 </body>

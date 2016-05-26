@@ -19,16 +19,56 @@ Package.json
     },
 
 
-Tools/NuGet Package Manager/Package Manager Console
+Project folder
 -------------------------------------------------------
 
-Scaffold-DbContext "'Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;''" Microsoft.EntityFrameworkCore.SqlServer
+dotnet ef dbcontext scaffold "Server=(localdb)\ProjectsV13;Database=PalangPanyaDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models 
 
 
-Scaffold-DbContext "'Server=(localdb)\ProjectsV13;Initial Catalog=PalangPanyaDB;Trusted_Connection=True;''" Microsoft.EntityFrameworkCore.SqlServer 
 
-Scaffold-DbContext "'Server=(localdb)\ProjectsV13;Initial Catalog=PalangPanyaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False'" Microsoft.EntityFrameworkCore.SqlServer 
+Remove in PalangPanyaDBContext.cs
+-------------------------------------------------------
+public partial class PalangPanyaDBContext : DbContext
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\ProjectsV13;Database=PalangPanyaDB;Trusted_Connection=True;");
+        }
 
 
-Scaffold-DbContext "'Data Source=(localdb)\\ProjectsV13;Initial Catalog=PalangPanyaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False'" Microsoft.EntityFrameworkCore.SqlServer 
+
+
+Add in PalangPanyaDBContext.cs
+-------------------------------------------------------
+
+public partial class PalangPanyaDBContext : DbContext
+    {
+        public PalangPanyaDBContext(DbContextOptions<PalangPanyaDBContext> options)
+            : base(options)
+        { }
+
+
+Add in Startup.cs
+-------------------------------------------------------
+        public void ConfigureServices(IServiceCollection services)
+        {
+            var connection = @"Server=(localdb)\ProjectsV13;Database=PalangPanyaDB;Trusted_Connection=True;";
+            services.AddDbContext<PalangPanyaDBContext>(options => options.UseSqlServer(connection));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

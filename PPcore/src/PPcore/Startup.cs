@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
-using PalangPanya.Models;
+using PPcore.Models;
 
 namespace PPcore
 {
@@ -25,7 +25,7 @@ namespace PPcore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = @"Server=(localdb)\ProjectsV13;Initial Catalog=PPCoreDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            var connection = @"Server=(localdb)\ProjectsV13;Database=PalangPanyaDB;Trusted_Connection=True;";
             services.AddDbContext<PalangPanyaDBContext>(options => options.UseSqlServer(connection));
 
             // Add framework services.
