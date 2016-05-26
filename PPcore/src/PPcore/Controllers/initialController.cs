@@ -1,11 +1,9 @@
-﻿using System.Linq;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
-using PalangPanya.Models;
-using System;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using PPcore.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace PalangPanya.Controllers
+namespace PPcore.Controllers
 {
     public class initialController : Controller
     {

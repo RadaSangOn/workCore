@@ -1,12 +1,11 @@
 using System.Linq;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
-using PalangPanya.Models;
 using System.Collections.Generic;
 using System;
+using Microsoft.AspNetCore.Mvc;
+using PPcore.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace PalangPanya.Controllers
+namespace PPcore.Controllers
 {
     public class mem_site_visitController : Controller
     {
@@ -47,12 +46,12 @@ namespace PalangPanya.Controllers
                 }
                 else
                 {
-                    return HttpNotFound();
+                    return NotFound();
                 }
             }
             else
             {
-                return HttpNotFound();
+                return NotFound();
             }
         }
 

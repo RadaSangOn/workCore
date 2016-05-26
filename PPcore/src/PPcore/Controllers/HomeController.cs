@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
-using PalangPanya.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using PPcore.Models;
 
-namespace PalangPanya.Controllers
+namespace PPcore.Controllers
 {
     public class HomeController : Controller
     {

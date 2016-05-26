@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace PalangPanya.ViewModels.mem_site_visit
+
+namespace PPcore.ViewModels.mem_site_visit
 {
     public class mem_site_visitViewModel
     {

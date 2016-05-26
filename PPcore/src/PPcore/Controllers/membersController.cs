@@ -1,20 +1,19 @@
 ﻿using System.Linq;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
-using PalangPanya.Models;
 using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Net.Http.Headers;
 using System.IO;
 using System.Collections.Generic;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
 using System.Threading.Tasks;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.AspNetCore.Mvc;
+using PPcore.Models;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
 
-namespace PalangPanya.Controllers
+namespace PPcore.Controllers
 {
     public class membersController : Controller
     {
@@ -60,13 +59,13 @@ namespace PalangPanya.Controllers
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             member member = _context.member.Single(m => m.id == new Guid(id));
             if (member == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             if (!String.IsNullOrEmpty(member.mem_photo))
@@ -173,13 +172,13 @@ namespace PalangPanya.Controllers
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             member member = _context.member.Single(m => m.id == new Guid(id));
             if (member == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             if (!String.IsNullOrEmpty(member.mem_photo))
@@ -271,7 +270,13 @@ namespace PalangPanya.Controllers
                 {
                     fileName += ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
                     fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50));
-                    await file.SaveAsAsync(Path.Combine(uploads, fileName));
+                    using (var SourceStream = file.OpenReadStream())
+                    {
+                        using (var fileStream = new FileStream(Path.Combine(uploads, fileName), FileMode.Create))
+                        {
+                            await SourceStream.CopyToAsync(fileStream);
+                        }
+                    }
                 }
             }
             return Json(new { result = "success", uploads = uploads, fileName = fileName });
@@ -289,7 +294,13 @@ namespace PalangPanya.Controllers
                 {
                     fileName += ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
                     fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50));
-                    await file.SaveAsAsync(Path.Combine(uploads, fileName));
+                    using (var SourceStream = file.OpenReadStream())
+                    {
+                        using (var fileStream = new FileStream(Path.Combine(uploads, fileName), FileMode.Create))
+                        {
+                            await SourceStream.CopyToAsync(fileStream);
+                        }
+                    }
                 }
             }
             return Json(new { result = "success", uploads = uploads, fileName = fileName });

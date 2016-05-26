@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNet.Mvc.Rendering;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace PalangPanya.ViewModels.mem_train_record
+namespace PPcore.ViewModels.mem_train_record
 {
     public class mem_train_recordViewModel
     {
