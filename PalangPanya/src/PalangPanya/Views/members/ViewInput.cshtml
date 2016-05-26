@@ -84,7 +84,7 @@
                                 <div class="col-md-2 text-right"><label asp-for="birthdate" class="control-label"></label></div>
                                 <div class="col-md-4">
                                     <div class="input-group">
-                                        <input asp-for="birthdate" class="form-control" onchange="setAge()" disabled>
+                                        <input asp-for="birthdate" class="form-control" onchange="setAge()" readonly >
                                         <span class="input-group-btn">
                                             <button id="birthdateButton" class="btn btn-default" type="button">
                                                 <i class="fa fa-calendar-o"></i>
@@ -103,7 +103,7 @@
                             <div class="row">
                                 <div class="col-md-2 text-right"><label asp-for="current_age" class="control-label"></label></div>
                                 <div class="col-md-4">
-                                    <input asp-for="current_age" class="form-control" disabled />
+                                    <input asp-for="current_age" class="form-control" readonly />
                                     <span asp-validation-for="current_age" class="text-danger" />
                                 </div>
                                 <div class="col-md-2 text-right"><label asp-for="cid_card" class="control-label" ></label></div>
@@ -247,12 +247,12 @@
                                 <div class="row">
                                     <div class="col-md-2 text-right"><label asp-for="latitude" class="control-label"></label></div>
                                     <div class="col-md-4">
-                                        <input asp-for="latitude" class="form-control" disabled />
+                                        <input asp-for="latitude" class="form-control" readonly />
                                         <span asp-validation-for="latitude" class="text-danger" />
                                     </div>
                                     <div class="col-md-2 text-right"><label asp-for="longitude" class="control-label"></label></div>
                                     <div class="col-md-4">
-                                        <input asp-for="longitude" class="form-control" disabled />
+                                        <input asp-for="longitude" class="form-control" readonly />
                                         <span asp-validation-for="longitude" class="text-danger" />
                                     </div>
                                 </div>
