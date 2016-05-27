@@ -542,9 +542,9 @@ namespace PPcore.Models
 
                 entity.Property(e => e.id).HasDefaultValueSql("newid()");
 
-                entity.Property(e => e.x_log).HasMaxLength(500);
+                entity.Property(e => e.x_log).HasColumnType("nvarchar(500)");
 
-                entity.Property(e => e.x_note).HasMaxLength(50);
+                entity.Property(e => e.x_note).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.x_status).HasColumnType("char(1)");
             });
@@ -618,7 +618,7 @@ namespace PPcore.Models
 
                 entity.Property(e => e.birthdate).HasColumnType("datetime");
 
-                entity.Property(e => e.building).HasMaxLength(50);
+                entity.Property(e => e.building).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.cid_card).HasColumnType("varchar(30)");
 
@@ -628,27 +628,27 @@ namespace PPcore.Models
 
                 entity.Property(e => e.district_code).HasColumnType("char(8)");
 
-                entity.Property(e => e.email).HasMaxLength(100);
+                entity.Property(e => e.email).HasColumnType("nvarchar(100)");
 
-                entity.Property(e => e.fax).HasMaxLength(50);
+                entity.Property(e => e.fax).HasColumnType("nvarchar(50)");
 
-                entity.Property(e => e.floor).HasMaxLength(20);
+                entity.Property(e => e.floor).HasColumnType("nvarchar(20)");
 
-                entity.Property(e => e.fname).HasMaxLength(100);
+                entity.Property(e => e.fname).HasColumnType("nvarchar(100)");
 
-                entity.Property(e => e.h_no).HasMaxLength(20);
+                entity.Property(e => e.h_no).HasColumnType("nvarchar(20)");
 
                 entity.Property(e => e.id).HasDefaultValueSql("newid()");
 
-                entity.Property(e => e.lane).HasMaxLength(50);
+                entity.Property(e => e.lane).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.latitude).HasColumnType("decimal");
 
-                entity.Property(e => e.lname).HasMaxLength(100);
+                entity.Property(e => e.lname).HasColumnType("nvarchar(100)");
 
                 entity.Property(e => e.longitude).HasColumnType("decimal");
 
-                entity.Property(e => e.lot_no).HasMaxLength(20);
+                entity.Property(e => e.lot_no).HasColumnType("nvarchar(20)");
 
                 entity.Property(e => e.marry_status).HasColumnType("char(1)");
 
@@ -660,21 +660,21 @@ namespace PPcore.Models
 
                 entity.Property(e => e.mlevel_code).HasColumnType("char(3)");
 
-                entity.Property(e => e.mobile).HasMaxLength(50);
+                entity.Property(e => e.mobile).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.mstatus_code).HasColumnType("char(3)");
 
-                entity.Property(e => e.nationality).HasMaxLength(30);
+                entity.Property(e => e.nationality).HasColumnType("nvarchar(30)");
 
                 entity.Property(e => e.parent_code).HasColumnType("varchar(30)");
 
-                entity.Property(e => e.place_name).HasMaxLength(50);
+                entity.Property(e => e.place_name).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.province_code).HasColumnType("char(8)");
 
-                entity.Property(e => e.religion).HasMaxLength(30);
+                entity.Property(e => e.religion).HasColumnType("nvarchar(30)");
 
-                entity.Property(e => e.room).HasMaxLength(20);
+                entity.Property(e => e.room).HasColumnType("nvarchar(20)");
 
                 entity.Property(e => e.rowversion)
                     .HasColumnType("timestamp")
@@ -682,31 +682,31 @@ namespace PPcore.Models
 
                 entity.Property(e => e.sex).HasColumnType("char(1)");
 
-                entity.Property(e => e.social_app_data).HasMaxLength(500);
+                entity.Property(e => e.social_app_data).HasColumnType("nvarchar(500)");
 
-                entity.Property(e => e.street).HasMaxLength(50);
+                entity.Property(e => e.street).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.subdistrict_code).HasColumnType("char(8)");
 
-                entity.Property(e => e.tel).HasMaxLength(50);
+                entity.Property(e => e.tel).HasColumnType("nvarchar(50)");
 
-                entity.Property(e => e.texta_address).HasMaxLength(200);
+                entity.Property(e => e.texta_address).HasColumnType("nvarchar(200)");
 
-                entity.Property(e => e.textb_address).HasMaxLength(200);
+                entity.Property(e => e.textb_address).HasColumnType("nvarchar(200)");
 
-                entity.Property(e => e.textc_address).HasMaxLength(200);
+                entity.Property(e => e.textc_address).HasColumnType("nvarchar(200)");
 
-                entity.Property(e => e.village).HasMaxLength(50);
+                entity.Property(e => e.village).HasColumnType("nvarchar(50)");
 
-                entity.Property(e => e.x_log).HasMaxLength(500);
+                entity.Property(e => e.x_log).HasColumnType("nvarchar(500)");
 
-                entity.Property(e => e.x_note).HasMaxLength(50);
+                entity.Property(e => e.x_note).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.x_status).HasColumnType("char(1)");
 
                 entity.Property(e => e.zip_code).HasColumnType("char(5)");
 
-                entity.Property(e => e.zone).HasMaxLength(30);
+                entity.Property(e => e.zone).HasColumnType("nvarchar(30)");
             });
 
             modelBuilder.Entity<pic_image>(entity =>
@@ -718,15 +718,15 @@ namespace PPcore.Models
 
                 entity.Property(e => e.image_file).HasColumnType("text");
 
-                entity.Property(e => e.image_name).HasMaxLength(50);
+                entity.Property(e => e.image_name).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.ref_doc_code).HasColumnType("varchar(30)");
 
                 entity.Property(e => e.ref_doc_type).HasColumnType("varchar(30)");
 
-                entity.Property(e => e.x_log).HasMaxLength(500);
+                entity.Property(e => e.x_log).HasColumnType("nvarchar(500)");
 
-                entity.Property(e => e.x_note).HasMaxLength(50);
+                entity.Property(e => e.x_note).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.x_status).HasColumnType("char(1)");
             });
@@ -782,7 +782,7 @@ namespace PPcore.Models
 
                 entity.Property(e => e.course_desc)
                     .IsRequired()
-                    .HasMaxLength(100);
+                    .HasColumnType("nvarchar(100)");
 
                 entity.Property(e => e.course_end).HasColumnType("datetime");
 
@@ -792,15 +792,15 @@ namespace PPcore.Models
 
                 entity.Property(e => e.project_code).HasColumnType("varchar(30)");
 
-                entity.Property(e => e.project_manager).HasMaxLength(100);
+                entity.Property(e => e.project_manager).HasColumnType("nvarchar(100)");
 
                 entity.Property(e => e.ref_doc).HasColumnType("varchar(30)");
 
                 entity.Property(e => e.support_head).HasColumnType("char(10)");
 
-                entity.Property(e => e.x_log).HasMaxLength(500);
+                entity.Property(e => e.x_log).HasColumnType("nvarchar(500)");
 
-                entity.Property(e => e.x_note).HasMaxLength(50);
+                entity.Property(e => e.x_note).HasColumnType("nvarchar(50)");
 
                 entity.Property(e => e.x_status).HasColumnType("char(1)");
             });
