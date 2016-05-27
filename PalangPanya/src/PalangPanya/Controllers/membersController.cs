@@ -270,7 +270,7 @@ namespace PalangPanya.Controllers
                 if (file.Length > 0)
                 {
                     fileName += ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50));
+                    fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50)) + Path.GetExtension(fileName);
                     await file.SaveAsAsync(Path.Combine(uploads, fileName));
                 }
             }
@@ -288,7 +288,7 @@ namespace PalangPanya.Controllers
                 if (file.Length > 0)
                 {
                     fileName += ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50));
+                    fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50)) + Path.GetExtension(fileName);
                     await file.SaveAsAsync(Path.Combine(uploads, fileName));
                 }
             }

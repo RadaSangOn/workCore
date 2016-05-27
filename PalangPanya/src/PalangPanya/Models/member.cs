@@ -38,7 +38,7 @@ namespace PalangPanya.Models
 
         [Display(Name = "วัน/เดือน/ปีเกิด")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
-        
+        [Required(ErrorMessage = "กรุณากรอกข้อมูล")]
         public DateTime? birthdate { get; set; }
 
         [Display(Name = "อายุปัจจุบัน")]

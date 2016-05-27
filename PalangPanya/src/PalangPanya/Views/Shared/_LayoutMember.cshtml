@@ -65,7 +65,7 @@
     <script>
         $.datepicker.regional['th'] = {
             dateFormat: 'dd-mm-yy', changeMonth: true, changeYear: true, constrainInput: true,
-            yearRange: "-100:+0", yearOffSet: 543,
+            yearRange: "-100:+0", yearOffSet: 543,beforeShow:dateDefault
         };
         $.datepicker.setDefaults($.datepicker.regional['th']);
         $(document).ready(function () {
@@ -82,9 +82,8 @@
             $('#' + nn).addClass('panelTopBarActive');
 
             $("#birthdate").datepicker($.datepicker.regional["th"]);
-            if ($("#birthdate").val() == "") { $("#birthdate").datepicker("setDate", new Date()); }
 
-            $('#mem_photo').hide(); $('#cid_card_pic').hide();
+            //$('#mem_photo').hide(); $('#cid_card_pic').hide();
             if (act != "Create") {
                 if ("@ViewBag.memPhoto") {
                     $('#waitMemPhoto').hide(); $('#emptyMemPhoto').hide();
@@ -111,7 +110,9 @@
         $('#birthdateButton').click(function () {
             $('#birthdate').datepicker("show");
         });
-
+        function dateDefault() {
+            if ($("#birthdate").val() == "") { $("#birthdate").datepicker("setDate", new Date()); }
+        }
         function setAge() {
             var dob = $('#birthdate').val().split('-');
             var d = new Date();
