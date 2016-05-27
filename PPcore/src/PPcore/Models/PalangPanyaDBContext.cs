@@ -678,7 +678,7 @@ namespace PPcore.Models
 
                 entity.Property(e => e.rowversion)
                     .HasColumnType("timestamp")
-                    .ValueGeneratedOnAddOrUpdate();
+                    .ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
 
                 entity.Property(e => e.sex).HasColumnType("char(1)");
 
