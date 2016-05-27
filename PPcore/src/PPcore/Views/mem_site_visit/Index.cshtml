@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_LayoutMember.cshtml";
 }
 
-@model IEnumerable<PalangPanya.ViewModels.mem_site_visit.mem_site_visitViewModel>
+@model IEnumerable<PPcore.ViewModels.mem_site_visit.mem_site_visitViewModel>
 
 @{
     ViewBag.Title = "แก้ไข รายละเอียดข้อมูลสมาชิก";
@@ -59,7 +59,7 @@
                         <h4 class="modal-title" id="mem_site_visitModalLabel" style="vertical-align:middle;"></h4>
                     </div>
                     <div class="modal-body container-fluid">
-                        @{ await Html.RenderPartialAsync("ViewInput", new PalangPanya.ViewModels.mem_site_visit.mem_site_visitViewModel()); }
+                        @{ await Html.RenderPartialAsync("ViewInput", new PPcore.ViewModels.mem_site_visit.mem_site_visitViewModel()); }
                     </div>
                     <!-- /.modal-content -->
                 </div>

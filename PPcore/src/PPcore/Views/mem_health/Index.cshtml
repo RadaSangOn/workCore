@@ -2,15 +2,16 @@
     Layout = "~/Views/Shared/_LayoutMember.cshtml";
 }
 
-@model PalangPanya.Models.mem_health
+@model PPcore.Models.mem_health
 
 @{
     ViewBag.Title = "แก้ไข รายละเอียดข้อมูลสมาชิก";
+    ViewBag.ButtonUpperRightType = "hidden";
 }
 
 <form>
     <div class="form-horizontal">
-        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div style="position:relative;top:-55px;margin-right:.5em;float:right">
             <input id="btnSave" class="btn btn-panel-green btn-sm" type="submit" value="&nbsp;&nbsp;&nbsp;จัดเก็บ&nbsp;&nbsp;&nbsp;">
         </div>

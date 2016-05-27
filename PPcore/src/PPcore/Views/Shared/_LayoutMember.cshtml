@@ -69,7 +69,7 @@
         };
         $.datepicker.setDefaults($.datepicker.regional['th']);
         $(document).ready(function () {
-            var nn = '@ViewContext.RouteData.Values["controller"]';
+            var nn = '@ViewContext.RouteData.Values["controller"]'; console.log("nn = "+nn);
             var act = '@ViewContext.RouteData.Values["action"]';
             $('#members').removeClass('panelTopBarActive');
             $('#mem_train_record').removeClass('panelTopBarActive');
