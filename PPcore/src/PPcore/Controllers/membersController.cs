@@ -113,7 +113,10 @@ namespace PPcore.Controllers
         // POST: members/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("member_code,birthdate,building,cid_card,cid_card_pic,cid_type,country_code,current_age,district_code,email,fax,floor,fname,h_no,id,lane,latitude,lname,longitude,lot_no,marry_status,mem_group_code,mem_photo,mem_type_code,mlevel_code,mobile,mstatus_code,nationality,parent_code,place_name,province_code,religion,room,rowversion,sex,social_app_data,street,subdistrict_code,tel,texta_address,textb_address,textc_address,village,x_log,x_note,x_status,zip_code,zone")] member member)
+        //public IActionResult Create([Bind("member_code,birthdate,building,cid_card,cid_card_pic,cid_type,country_code,current_age,district_code,email,fax,floor,fname,h_no,lane,latitude,lname,longitude,lot_no,marry_status,mem_group_code,mem_photo,mem_type_code,mlevel_code,mobile,mstatus_code,nationality,parent_code,place_name,province_code,religion,room,rowversion,sex,social_app_data,street,subdistrict_code,tel,texta_address,textb_address,textc_address,village,x_log,x_note,x_status,zip_code,zone")] member member)
+
+
+        public IActionResult Create(member member)
         {
             if (ModelState.IsValid)
             {
@@ -269,7 +272,7 @@ namespace PPcore.Controllers
                 if (file.Length > 0)
                 {
                     fileName += ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50));
+                    fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50)) + Path.GetExtension(fileName);
                     using (var SourceStream = file.OpenReadStream())
                     {
                         using (var fileStream = new FileStream(Path.Combine(uploads, fileName), FileMode.Create))
@@ -293,7 +296,7 @@ namespace PPcore.Controllers
                 if (file.Length > 0)
                 {
                     fileName += ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50));
+                    fileName = fileName.Substring(0, (fileName.Length <= 50 ? fileName.Length : 50)) + Path.GetExtension(fileName);
                     using (var SourceStream = file.OpenReadStream())
                     {
                         using (var fileStream = new FileStream(Path.Combine(uploads, fileName), FileMode.Create))
