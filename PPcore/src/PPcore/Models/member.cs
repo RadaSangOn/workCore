@@ -36,7 +36,7 @@ namespace PPcore.Models
 
         [Display(Name = "วัน/เดือน/ปีเกิด")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
-
+        [Required(ErrorMessage = "กรุณากรอก วัน/เดือน/ปีเกิด")]
         public DateTime? birthdate { get; set; }
 
         [Display(Name = "อายุปัจจุบัน")]
