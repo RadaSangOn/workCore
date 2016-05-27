@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PPcore.Models
 {
@@ -9,6 +9,7 @@ namespace PPcore.Models
         public string project_code { get; set; }
         public string ctype_code { get; set; }
         public string cgroup_code { get; set; }
+        [Display(Name = "ชื่อ หลักสูตรอบรม")]
         public string course_desc { get; set; }
         public DateTime? course_date { get; set; }
         public DateTime? course_approve_date { get; set; }

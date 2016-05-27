@@ -105,6 +105,9 @@
                         $(this).attr({ 'disabled': 'disabled' });
                     }
                 });
+                if (!($('#birthdateButton').attr('disabled'))) {
+                    $('#birthdateButton').attr({ 'disabled': 'disabled' });
+                }
             }
         });
         $('#birthdateButton').click(function () {
