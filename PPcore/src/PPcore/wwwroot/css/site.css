@@ -57,6 +57,64 @@
 .navbar-green .dropdown-toggle {
     color: #000000;
 }
+.navbar-blue {
+  background-color: #093D6A;
+  border-color: #000000;
+}
+.navbar-blue .navbar-brand {
+  color: #fff;
+}
+.navbar-blue .navbar-brand:hover,
+.navbar-blue .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-blue .navbar-text {
+  color: #fff;
+}
+.navbar-blue .navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-blue .navbar-nav > li > a:hover,
+.navbar-blue .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-blue .navbar-nav > .active > a,
+.navbar-blue .navbar-nav > .active > a:hover,
+.navbar-blue .navbar-nav > .active > a:focus {
+  color: black;
+  background-color: #000000;
+}
+.navbar-blue .dropdown-toggle {
+    color: #fff;
+}
+.navbar-blue .dropdown-toggle:hover {
+    color: black;
+    background-color: #FFC000;
+}
+.navbar-blue .dropdown-toggle:focus {
+    color: black;
+    background-color: #FFC000;
+}
+.navbar-blue .dropdown-menu {
+color: black;
+background-color: #FFC000;
+}
+.navbar-blue .dropdown-menu > li > a {
+color: black;
+background-color: #FFC000;
+}
+.navbar-blue .dropdown-menu > li > a:hover,
+.navbar-blue .dropdown-menu > li > a:focus {
+color: white;
+background-color: #093D6A;
+}
+
+
+
+
+
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
@@ -76,6 +134,15 @@
 .panel-green > .panel-heading {
   color: #fff;
   background-color: #5cb85c;
+  border-color:  #ddd;
+  height: 50px;
+}
+.panel-blue {
+  border-color: #ddd;
+}
+.panel-blue > .panel-heading {
+  color: white;
+  background-color: #093D6A;
   border-color:  #ddd;
   height: 50px;
 }
